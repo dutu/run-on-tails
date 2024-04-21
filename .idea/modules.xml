@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../b-tails/.idea/b-tails.iml" filepath="$PROJECT_DIR$/../b-tails/.idea/b-tails.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/run-on-tails.iml" filepath="$PROJECT_DIR$/.idea/run-on-tails.iml" />
+    </modules>
+  </component>
+</project>
