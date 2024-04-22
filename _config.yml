@@ -1,8 +1,10 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Run on Tails
+description: A Guide on how to add and run various applications on Tails Os
 theme: just-the-docs
+color_scheme: dark
 
 url: https://dutu.github.io/run-on-tails
 
 aux_links:
+  Issues / Knowledge Base: https://github.com/dutu/run-on-tails/issues
   Contribute! Source on GitHub: https://github.com/dutu/run-on-tails/
