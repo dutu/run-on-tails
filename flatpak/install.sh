@@ -19,7 +19,7 @@ mkdir -p $persistence_dir/flatpak || { echo_red "Failed to create directory $per
 
 # Copy utility files to persistent storage and make scripts executable
 echo_blue "Copying flatpak utility files to persistent storage..."
-rsync -av assets_dir/ $persistence_dir/flatpak/utils/ || { echo_red "Failed to rsync files to $persistence_dir/flatpak/utils"; exit 1; }
+rsync -av $assets_dir/ $persistence_dir/flatpak/utils/ || { echo_red "Failed to rsync files to $persistence_dir/flatpak/utils"; exit 1; }
 find $persistence_dir/flatpak/utils -type f -name "*.sh" -exec chmod +x {} \; || { echo_red "Failed to make scripts executable"; exit 1; }
 
 # Execute scripts for setting up persistent Flatpak apps and make it autostart
