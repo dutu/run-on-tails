@@ -21,7 +21,7 @@ nav_order: 30
 ---
 ### Install Flatpak
 
-* Make sure **Tails Autostart** utility has been installed. See [Tails Autostart](tails_autostart.html).
+* Make sure **Tails Autostart** utility has been installed. See [Tails Autostart].
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -48,7 +48,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
 
 {: .highlight }
 
-> Flatpak is now installed applications can be added with `flatpak install`.
+> Flatpak is now installed and flatpak applications can be added with `flatpak install`.
 > 
 > You can launch your Flatpak application from the GNOME desktop using a menu item, which is represented by a .desktop file.
 >
