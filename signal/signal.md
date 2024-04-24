@@ -18,9 +18,9 @@ nav_order: 30
 
 [Signal] is a privacy-focused messaging application that offers end-to-end encryption for secure text messages, voice calls, and video calls.
 
-![signal.png](../../images/signal.png)
+![signal.png](signal.png)
 
-{: .highlight }
+{: .note }
 For privacy, the application's configuration is not persistent and resets with every Tails reboot.<br>
 As a result, after each reboot you need to link Signal to your account.<br>
 Although possible, the process for setting up a persistent configuration isn't covered in this instruction.
@@ -32,7 +32,11 @@ Although possible, the process for setting up a persistent configuration isn't c
 * Make sure **Flatpak** has been installed. See [Flatpak].
 
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Clone Run-on-Tails GitHub repository:
+```shell
+$ cd ~/Downloads
+$ git clone https://github.com/dutu/run-on-tails.git
+```
 
 
 * Install Signal:
@@ -43,10 +47,15 @@ Although possible, the process for setting up a persistent configuration isn't c
 
 * Configure persistence:
   ```shell
+  $ chmod +x ./run-on-tails/signal/config-persistence.sh 
+  $ ./run-on-tails/signal/config-persistence.sh 
   ```
+  * Wait for the message `Flatpak installation setup completed successfully.`
 
 ---
-### Start Signal
+### How to use it
+
+Signal application requires Flatpak package. Flatpak is installed, as [additional software], automatically every time you start Tails. It may take a couple of minutes until software installation completes. Wait for the desktop message ""
 
 * Choose **Applications ▸ Other ▸ Signal**
 
@@ -91,3 +100,4 @@ Although possible, the process for setting up a persistent configuration isn't c
 --- 
 [Signal]: https://signal.org/
 [Flatpak]: ../flatpak/flatpak.html
+[additional software]: https://tails.net/doc/persistent_storage/configure/index.en.html#additional_software
