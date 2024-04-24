@@ -10,12 +10,16 @@ echo_red() {
   echo -e "\033[0;31m$1\033[0m"
 }
 
-dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
 persistence_dir="/home/amnesia/Persistent"
+dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
+persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
 assets_dir=$(dirname "$0")/assets
 
 echo_blue "Creating persistent directory for Flatpak..."
 mkdir -p $persistence_dir/flatpak || { echo_red "Failed to create directory $persistence_dir/flatpak"; exit 1; }
+
+# Create persistent directory for menu items
+mkdir -p $persistent_desktop_dir || { echo_red "Failed to create persistent directory $persistent_desktop_dir"; exit 1; }
 
 # Copy utility files to persistent storage and make scripts executable
 echo_blue "Copying flatpak utility files to persistent storage..."
