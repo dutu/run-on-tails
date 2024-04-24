@@ -39,10 +39,10 @@ $ git clone https://github.com/dutu/run-on-tails.git
     * Click **Install Every Time**, when Tails asks if you want to add flatpak to your additional software.
 
 
-* Add persistent configuration for flatpak applications:
+* Configure persistence for flatpak applications:
   ```shell
-  $ chmod +x ./run-on-tails/flatpak/add_persistence.sh 
-  $ ./run-on-tails/flatpak/add_persistence.sh 
+  $ chmod +x ./run-on-tails/flatpak/config_persistence.sh 
+  $ ./run-on-tails/flatpak/config_persistence.sh 
   ```
   * Wait for the message `Flatpak installation setup completed successfully.`
 
