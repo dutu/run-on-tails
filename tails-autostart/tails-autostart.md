@@ -38,6 +38,7 @@ This utility facilitates other applications to work properly.
   $ chmod +x ./run-on-tails/tails-autostart/install.sh
   $ ./run-on-tails/tails-autostart/install.sh
   ```
+  * Wait for message `Tails Autostart installation completed successfully.`
 
 ---
 ### How to use it

@@ -15,11 +15,11 @@ echo_blue "Changing to the Downloads directory..."
 cd ~/Downloads || { echo_red "Failed to change directory to ~/Downloads"; exit 1; }
 
 # Download the tails-autostart files
-echo_blue "Downloading Tails-autostart files..."
+echo_blue "Downloading Tails Autostart files..."
 wget https://raw.githubusercontent.com/dutu/tails-autostart/master/assets/tails-autostart.tar.gz || { echo_red "Failed to download tails-autostart.tar.gz"; exit 1; }
 
 # Unpack the downloaded tar.gz file
-echo_blue "Unpacking Tails-autostart files..."
+echo_blue "Unpacking Tails Autostart files..."
 tar -xzvf tails-autostart.tar.gz || { echo_red "Failed to unpack tails-autostart.tar.gz"; exit 1; }
 
 # Change the permissions to make the script executable
@@ -30,4 +30,4 @@ chmod +x tails-autostart/install_tails_autostart.sh || { echo_red "Failed to mak
 echo_blue "Running the installation script..."
 ./tails-autostart/install_tails_autostart.sh || { echo_red "Failed to execute the installation script"; exit 1; }
 
-echo_blue "Tails-autostart installation completed successfully."
+echo_blue "Tails Autostart installation completed successfully."
