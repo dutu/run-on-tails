@@ -35,6 +35,7 @@ This utility facilitates other applications to work properly.
 
 * Run installation script:
   ```shell
+  $ chmod +x ./run-on-tails/tails-autostart/install.sh
   $ ./run-on-tails/tails-autostart/install.sh
   ```
 
