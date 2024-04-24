@@ -2,6 +2,23 @@ title: Run on Tails
 description: A Guide on how to add and run various applications on Tails Os
 theme: just-the-docs
 color_scheme: dark
+markdown: kramdown
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
 
 url: https://dutu.github.io/run-on-tails
 
