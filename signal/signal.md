@@ -50,7 +50,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
   $ chmod +x ./run-on-tails/signal/config-persistence.sh 
   $ ./run-on-tails/signal/config-persistence.sh 
   ```
-  * Wait for the message `Flatpak installation setup completed successfully.`
+  * Wait for the message `Signal installation setup completed successfully.`
 
 ---
 ### How to use it
@@ -76,14 +76,9 @@ Signal application requires Flatpak package. Flatpak is installed, as [additiona
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
 
-* Remove the application:
+* Remove the application, unused runtimes and SDK extensions:
   ```shell
   $ torsocks flatpak uninstall org.signal.Signal
-  ```
-
-
-* Remove unused runtimes and SDK extensions:
-  ```shell
   $ torsocks flatpak uninstall --unused
   ```
 
