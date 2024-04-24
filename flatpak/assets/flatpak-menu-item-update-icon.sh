@@ -20,7 +20,8 @@ app_id="$1"
 
 # Define the persistence directories and file paths
 persistence_dir="/home/amnesia/Persistent"
-persistent_desktop_dir="$persistence_dir/dotfiles/.local/share/applications"
+dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
+persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
 persistent_desktop_path="$persistent_desktop_dir/$app_id.desktop"
 flatpak_share_dir="$persistence_dir/flatpak/exports/share"
 
