@@ -41,8 +41,8 @@ $ git clone https://github.com/dutu/run-on-tails.git
 
 * Configure persistence for flatpak applications:
   ```shell
-  $ chmod +x ./run-on-tails/flatpak/config_persistence.sh 
-  $ ./run-on-tails/flatpak/config_persistence.sh 
+  $ chmod +x ./run-on-tails/flatpak/config-persistence.sh 
+  $ ./run-on-tails/flatpak/config-persistence.sh 
   ```
   * Wait for the message `Flatpak installation setup completed successfully.`
 
