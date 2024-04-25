@@ -50,7 +50,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
   $ chmod +x ./run-on-tails/telegram/config-persistence.sh 
   $ ./run-on-tails/telegram/config-persistence.sh 
   ```
-  * Wait for the message `Telegram installation setup completed successfully.`
+  * Wait for the message `Telegram application setup completed successfully.`
 
 
 ---
@@ -67,7 +67,7 @@ Telegram application requires Flatpak package. Flatpak is installed, as [additio
   * Click on the spinning icon in the bottom-left corner of the welcome window
   * Choose **Use custom proxy**
   * Enter Hostname `127.0.0.1`, port `9050`, and then click **Save**
-  * Wait for "**SOCKS5** 127.0.0.1:9050" to become online, then click **Close**
+  * Wait for "**SOCKS5** 127.0.0.1:9050" to become `connected`, then click **Close**
   * Click **Start Messaging**
 
   

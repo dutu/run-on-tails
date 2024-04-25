@@ -50,7 +50,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
   $ chmod +x ./run-on-tails/signal/config-persistence.sh 
   $ ./run-on-tails/signal/config-persistence.sh 
   ```
-  * Wait for the message `Signal installation setup completed successfully.`
+  * Wait for the message `Signal application setup completed successfully.`
 
 ---
 ### How to use it
