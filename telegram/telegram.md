@@ -18,11 +18,11 @@ nav_order: 50
 
 [Telegram] is an instant messaging app providing voice, video, and text communications, along with secure end-to-end encrypted messaging, file sharing, and a variety of community features like groups and channels.
 
-![telegram_welcome_screen.png](../../images/telegram_welcome_screen.png)
+![telegram.png](telegram.png)
 
 
 {: .note }
-For privacy, the application's configuration is not persistent and resets with every Tails reboot.<br> 
+The application's configuration is not persistent and resets with every Tails reboot.<br> 
 As a result, after each reboot you must set the proxy server and link Telegram to your account.<br>
 Although possible, the process for setting up a persistent configuration isn't covered in this instruction.
 
@@ -56,7 +56,10 @@ $ git clone https://github.com/dutu/run-on-tails.git
 ---
 ### How to use it
 
-Telegram application requires Flatpak package. Flatpak is installed, as [additional software], automatically every time you start Tails. It may take a couple of minutes until software installation completes. Wait for the desktop message ""
+* After Tails starts, before launching Telegram, wait for the desktop message "**Additional software installed successfully**".
+
+{: .note }
+Telegram application requires Flatpak package. Flatpak is installed as [additional software] automatically every time you start Tails. It may take a couple of minutes until software installation completes.
 
 
 * Choose **Applications ▸ Other ▸ Telegram**
@@ -90,7 +93,7 @@ Telegram application requires Flatpak package. Flatpak is installed, as [additio
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
 
-* Remove the application, unused runtimes and SDK extensions:
+* Remove the application, and unused runtimes and SDK extensions:
   ```shell
   $ torsocks flatpak uninstall org.telegram.desktop
   $ torsocks flatpak uninstall --unused
@@ -99,8 +102,8 @@ Telegram application requires Flatpak package. Flatpak is installed, as [additio
 * Remove menu entry and utility files:
   ```shell
   $ dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
-  $ rm $dotfiles_dir/.local/share/applications/org.telegram.desktop
-  $ rm /home/amnesia/.local/share/applications/org.telegram.desktop
+  $ rm $dotfiles_dir/.local/share/applications/org.telegram.desktop.desktop
+  $ rm /home/amnesia/.local/share/applications/org.telegram.desktop.desktop
   $ persistence_dir="/home/amnesia/Persistent"
   $ rm -fr $persistence_dir/org.telegram.desktop
   ```

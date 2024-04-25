@@ -21,7 +21,7 @@ nav_order: 30
 ![signal.png](signal.png)
 
 {: .note }
-For privacy, the application's configuration is not persistent and resets with every Tails reboot.<br>
+The application's configuration is not persistent and resets with every Tails reboot.<br>
 As a result, after each reboot you need to link Signal to your account.<br>
 Although possible, the process for setting up a persistent configuration isn't covered in this instruction.
 
@@ -30,6 +30,9 @@ Although possible, the process for setting up a persistent configuration isn't c
 ### Install Signal
 
 * Make sure **Flatpak** has been installed. See [Flatpak].
+
+
+* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -52,10 +55,15 @@ $ git clone https://github.com/dutu/run-on-tails.git
   ```
   * Wait for the message `Signal application setup completed successfully.`
 
+
 ---
 ### How to use it
 
-Signal application requires Flatpak package. Flatpak is installed, as [additional software], automatically every time you start Tails. It may take a couple of minutes until software installation completes. Wait for the desktop message ""
+* After Tails starts, before launching Signal, wait for the desktop message "**Additional software installed successfully**".
+
+{: .note }
+Signal application requires Flatpak package. Flatpak is installed as [additional software] automatically every time you start Tails. It may take a couple of minutes until software installation completes.
+
 
 * Choose **Applications ▸ Other ▸ Signal**
 
@@ -76,7 +84,7 @@ Signal application requires Flatpak package. Flatpak is installed, as [additiona
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
 
-* Remove the application, unused runtimes and SDK extensions:
+* Remove the application, and unused runtimes and SDK extensions:
   ```shell
   $ torsocks flatpak uninstall org.signal.Signal
   $ torsocks flatpak uninstall --unused
