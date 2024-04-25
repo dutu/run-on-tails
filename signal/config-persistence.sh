@@ -36,6 +36,7 @@ echo_blue "Updating .desktop file for Tails compatibility..."
 persistent_desktop_file="$dotfiles_dir/.local/share/applications/$app_id.desktop"
 desktop-file-edit --remove-key="SingleMainWindow" $persistent_desktop_file || { echo_red "Failed to remove SingleMainWindow key"; exit 1; }
 desktop-file-edit --remove-category="Network" $persistent_desktop_file || { echo_red "Failed to remove Network category"; exit 1; }
+desktop-file-edit --remove-key="DBusActivatable" $persistent_desktop_file || { echo_red "Failed to remove DBusActivatable key"; exit 1; }
 
 # Force GNOME to recognize a change in the .desktop file
 local_desktop_dir="/home/amnesia/.local/share/applications"
