@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: home
-nav_order: 10
+nav_order: 1
 ---
 
 **Run-on-Tails** is a guide that helps you add and run various applications on [Tails].

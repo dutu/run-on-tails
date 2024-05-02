@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flatpak
-nav_order: 920
+nav_order: 20
 ---
 
 ## Flatpak
