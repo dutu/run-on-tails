@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Telegram Desktop Messenger
-nav_order: 50
+title: Telegram
+nav_order: 30
 ---
 
-## Telegram Desktop Messenger
+## Telegram
 {: .no_toc }
 
 ## Table of contents

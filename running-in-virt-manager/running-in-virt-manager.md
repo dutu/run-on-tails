@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Running Tails in virt-manager
-nav_order: 900
+nav_order: 930
 ---
 
 ## Running Tails in virt-manager

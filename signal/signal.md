@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Signal Desktop Messenger
-nav_order: 30
+title: Signal
+nav_order: 20
 ---
 
-## Signal Desktop Messenger
+## Signal
 {: .no_toc }
 
 ## Table of contents

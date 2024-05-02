@@ -4,7 +4,7 @@ layout: home
 nav_order: 10
 ---
 
-**Run-on-Tails** is a guide that helps you add and run various applications on [Tails OS].
+**Run-on-Tails** is a guide that helps you add and run various applications on [Tails].
 
 # Getting started
 
@@ -18,8 +18,7 @@ nav_order: 10
   - Dotfiles
 
 ----
-
-[Tails OS]: https://tails.net
+[Tails]: https://tails.net
 [Install Tails]: https://tails.net/install/index.en.html
 [Set up an administration password]: https://tails.net/doc/first_steps/welcome_screen/administration_password/index.en.html
 [Connect to Internet]: https://tails.net/doc/anonymous_internet/tor/index.en.html

@@ -1,5 +1,5 @@
-title: Run on Tails
-description: A Guide on how to add and run various applications on Tails Os
+title: Run-on-Tails
+description: A Guide on how to add and run various applications on Tails
 theme: just-the-docs
 color_scheme: dark
 markdown: kramdown
@@ -21,6 +21,8 @@ callouts:
     color: red
 
 url: https://dutu.github.io/run-on-tails
+
+nav_external_links_new_tab: true
 
 aux_links:
   Issues / Knowledge Base: https://github.com/dutu/run-on-tails/issues
