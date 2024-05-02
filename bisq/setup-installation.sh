@@ -2,7 +2,7 @@
 
 # Function to print messages in blue
 echo_blue() {
-  echo -e "\033[0;34m$1\033[0m"
+  echo -e "\033[1;34m$1\033[0m"
 }
 
 # Function to print error messages in red
@@ -10,15 +10,21 @@ echo_red() {
   echo -e "\033[0;31m$1\033[0m"
 }
 
-# Define common environment variables
+# Define version and file locations
 VERSION="1.9.15"
+url_base="https://github.com/bisq-network/bisq/releases/download/v${VERSION}"
+binary_filename="Bisq-64bit-${VERSION}.deb"
+signature_filename="${binary_filename}.asc"
+key_filename="E222AA02.asc"
+expected_fingerprint="B493 3191 06CC 3D1F 252E  19CB F806 F422 E222 AA02"
 persistence_dir="/home/amnesia/Persistent"
 dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
 persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
+local_desktop_dir="/home/amnesia/.local/share/applications"
 
 # Check if Bisq is already installed
 if [ -f "/opt/bisq/bin/Bisq" ]; then
-  echo_red "Bisq is already installed, please reboot Tails..."
+  echo_red "Bisq is already installed, please reboot Tails and run the script again..."
   exit 1
 fi
 
@@ -31,14 +37,13 @@ assets_dir=$(dirname "$0")/assets
 rsync -av $assets_dir/ $persistence_dir/bisq/utils/ || { echo_red "Failed to rsync files to $persistence_dir/bisq/utils"; exit 1; }
 find $persistence_dir/bisq/utils -type f -name "*.sh" -exec chmod +x {} \; || { echo_red "Failed to make scripts executable"; exit 1; }
 
-
-# Define version and file locations
-VERSION="1.9.15"
-url_base="https://github.com/bisq-network/bisq/releases/download/v${VERSION}"
-binary_filename="Bisq-64bit-${VERSION}.deb"
-signature_filename="${binary_filename}.asc"
-key_filename="E222AA02.asc"
-expected_fingerprint="B493 3191 06CC 3D1F 252E  19CB F806 F422 E222 AA02"
+echo_blue "Creating desktop menu icon..."
+# Create local desktop directory
+mkdir -p "${local_desktop_dir}"
+# Copy .desktop file to persistent directory
+cp "$assets_dir/bisq.desktop" "$persistent_desktop_dir"
+# Create a symbolic link to it in the local .desktop directory
+ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop"
 
 # Download Bisq binary
 echo_blue "Downloading Bisq version ${VERSION}..."
@@ -56,13 +61,14 @@ curl -L -o "${key_filename}" "${url_base}/${key_filename}" || { echo_red "Failed
 echo_blue "Importing the GPG key..."
 gpg --import "${key_filename}" || { echo_red "Failed to import GPG key."; exit 1; }
 
-# Extract the fingerprint from GPG output
-imported_fingerprint=$(gpg --with-colons --fingerprint | grep -A 1 'pub' | grep 'fpr' | cut -d: -f10)
+# Extract imported fingerprints
+imported_fingerprints=$(gpg --with-colons --fingerprint | grep -A 1 'pub' | grep 'fpr' | cut -d: -f10 | tr -d '\n')
 
 # Remove spaces from the expected fingerprint for comparison
 formatted_expected_fingerprint=$(echo "$expected_fingerprint" | tr -d ' ')
 
-if [[ "$imported_fingerprint" != "$formatted_expected_fingerprint" ]]; then
+# Check if the expected fingerprint is in the list of imported fingerprints
+if [[ ! "$imported_fingerprints" =~ $formatted_expected_fingerprint ]]; then
   echo_red "The imported GPG key fingerprint does not match the expected fingerprint."
   exit 1
 fi
