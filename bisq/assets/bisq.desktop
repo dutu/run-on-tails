@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bisq
+Comment=A decentralized bitcoin exchange network.
+Exec=/home/amnesia/Persistent/bisq/utils/exec.sh
+Icon=/home/amnesia/Persistent/bisq/icon.png
+Terminal=false
+Type=Other
+Categories=Network
+MimeType=
