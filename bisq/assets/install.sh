@@ -24,6 +24,8 @@ fi
 # Install Bisq
 echo_blue "Installing Bisq..."
 dpkg -i "${bisq_installer}" || { echo_red "Failed to install Bisq."; exit 1; }
+# Remove installed desktop menu icon
+rm -f /usr/share/applications/bisq-Bisq.desktop
 
 # Change access rights for Tor control cookie
 echo_blue "Changing access rights for Tor control cookie..."
