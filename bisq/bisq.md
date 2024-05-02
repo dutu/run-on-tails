@@ -56,7 +56,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
 ---
 ### Backup User Data
 
-* While Bisq is closed, copy your [Bisq Data directory] located at `/home/amnesia/Persistent/bisq/Bisq` to an backup location.
+* While Bisq is closed, copy your [Bisq Data directory] located at `/home/amnesia/Persistent/bisq/Bisq` to a backup location.
 
 
 ---
