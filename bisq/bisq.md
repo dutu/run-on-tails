@@ -1,16 +1,7 @@
-
-
-```shell
-ln -s /home/amnesia/Persistent/bisq/Bisq /home/amnesia/.local/share/Bisq
-
-/opt/bisq/bin/Bisq --torControlPort 9052 --torControlCookieFile=/var/run/tor/control.authcookie --torControlUseSafeCookieAuth
-```
-
-
 ---
 layout: page
 title: Bisq
-nav_order: 40
+nav_order: 50
 ---
 
 ## Bisq
@@ -51,8 +42,8 @@ $ git clone https://github.com/dutu/run-on-tails.git
 
 * Setup Bisq installation:
   ```shell
-  $ chmod +x ./run-on-tails/bisq/setup-installation.sh 
-  $ ./run-on-tails/flatpak/setup-installation.sh 
+  $ chmod +x ./run-on-tails/bisq/config-installation.sh 
+  $ ./run-on-tails/flatpak/config-installation.sh 
   ```
   * Wait for the message `Bisq installation setup completed successfully.`
 
