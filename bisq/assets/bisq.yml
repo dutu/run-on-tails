@@ -7,9 +7,12 @@
     AUTHCHALLENGE:
       - 'SAFECOOKIE .*'
     SETEVENTS:
-      - 'CIRC WARN ERR'
       - 'CIRC ORCONN INFO NOTICE WARN ERR HS_DESC HS_DESC_CONTENT'
     GETINFO:
+      - pattern: 'status/bootstrap-phase'
+        response:
+          - pattern: '250-status/bootstrap-phase=*'
+            replacement: '250-status/bootstrap-phase=NOTICE BOOTSTRAP PROGRESS=100 TAG=done SUMMARY="Done"'
       - 'net/listeners/socks'
     ADD_ONION:
       - pattern:     'NEW:(\S+) Port=9999,(\S+)'
