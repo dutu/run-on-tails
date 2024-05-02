@@ -43,8 +43,11 @@ mkdir -p "${local_desktop_dir}"
 mkdir -p "$persistent_desktop_dir"
 # Copy .desktop file to persistent directory
 cp "$assets_dir/bisq.desktop" "$persistent_desktop_dir"  || { echo_red "Failed to copy .desktop file to persistent directory $persistent_desktop_dir"; exit 1; }
-# Create a symbolic link to it in the local .desktop directory
-ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
+# Create a symbolic link to it in the local .desktop directory, if it doesn't exist
+if [ ! -L "$local_desktop_dir/bisq.desktop" ]; then
+    ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
+fi
+
 
 # Download Bisq binary
 echo_blue "Downloading Bisq version ${VERSION}..."
