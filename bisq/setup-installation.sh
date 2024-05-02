@@ -38,12 +38,13 @@ rsync -av $assets_dir/ $persistence_dir/bisq/utils/ || { echo_red "Failed to rsy
 find $persistence_dir/bisq/utils -type f -name "*.sh" -exec chmod +x {} \; || { echo_red "Failed to make scripts executable"; exit 1; }
 
 echo_blue "Creating desktop menu icon..."
-# Create local desktop directory
+# Create desktop directories
 mkdir -p "${local_desktop_dir}"
+mkdir -p "$persistent_desktop_dir"
 # Copy .desktop file to persistent directory
-cp "$assets_dir/bisq.desktop" "$persistent_desktop_dir"
+cp "$assets_dir/bisq.desktop" "$persistent_desktop_dir"  || { echo_red "Failed to copy .desktop file to persistent directory $persistent_desktop_dir"; exit 1; }
 # Create a symbolic link to it in the local .desktop directory
-ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop"
+ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
 
 # Download Bisq binary
 echo_blue "Downloading Bisq version ${VERSION}..."
