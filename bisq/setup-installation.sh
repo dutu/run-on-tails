@@ -29,7 +29,7 @@ if [ -f "/opt/bisq/bin/Bisq" ]; then
 fi
 
 echo_blue "Creating persistent directory for Bisq..."
-mkdir -p $persistence_dir/bisq || { echo_red "Failed to create directory $persistence_dir/bisq"; exit 1; }
+mkdir -p $persistence_dir/bisq/Bisq || { echo_red "Failed to create directory $persistence_dir/bisq/Bisq"; exit 1; }
 
 # Copy utility files to persistent storage and make scripts executable
 echo_blue "Copying bisq utility files to persistent storage..."
