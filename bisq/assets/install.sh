@@ -2,12 +2,24 @@
 
 # Function to print messages in blue
 echo_blue() {
-  echo -e "\033[1;34m$1\033[0m"
+  if [ -t 1 ]; then
+    # If File descriptor 1 (stdout) is open and refers to a terminal
+    echo -e "\033[1;34m$1\033[0m"
+  else
+    # If stdout is not a terminal, send a desktop notification
+    notify-send -i "/home/amnesia/Persistent/bisq/utils/icon.png" "Starting Bisq" "$1"
+  fi
 }
 
 # Function to print error messages in red
 echo_red() {
-  echo -e "\033[0;31m$1\033[0m"
+  if [ -t 1 ]; then
+    # If File descriptor 1 (stdout) is open and refers to a terminal
+    echo -e "\033[0;31m$1\033[0m"
+  else
+    # If stdout is not a terminal, send a desktop notification
+    notify-send -u critical -i "error" "Staring Bisq" "$1\nExiting..."
+  fi
 }
 
 # Define version and file locations
