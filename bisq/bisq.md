@@ -16,7 +16,7 @@ nav_order: 50
 ---
 ### Overview
 
-[Bisq] is and open-source desktop software, Bisq provides a peer to peer bitcoin exchange experience. Buy and sell bitcoin for fiat (or other cryptocurrencies) privately and securely using Bisq's peer-to-peer network.
+[Bisq] is and open-source desktop software. Bisq provides a peer to peer bitcoin exchange experience: Buy and sell bitcoin for fiat (or other cryptocurrencies) privately and securely using Bisq's peer-to-peer network.
 
 ![bisq.png](bisq.png)
 
