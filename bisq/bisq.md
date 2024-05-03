@@ -37,7 +37,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
 * Setup Bisq installation:
   ```shell
   $ chmod +x ./run-on-tails/bisq/setup-installation.sh 
-  $ ./run-on-tails/flatpak/setup-installation.sh 
+  $ ./run-on-tails/bisq/setup-installation.sh 
   ```
   * Wait for the message `Bisq installation setup completed successfully.`
 
