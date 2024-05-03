@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tails Autostart
-nav_order: 10
+nav_order: 810
 ---
 
 ## Tails Autostart

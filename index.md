@@ -4,11 +4,11 @@ layout: home
 nav_order: 1
 ---
 
-**Run-on-Tails** is a guide that helps you add and run various applications on [Tails].
+**Run-on-Tails** is a collection of guides that helps you add and run various applications on [Tails].
 
-# Getting started
+## Getting started
 
-- [Install Tails] on an USB stick
+- [Install Tails] on a USB stick
 - [Set up an administration password] when starting Tails
 - [Connect to Internet]
 - [Create the Persistent Storage]
@@ -17,6 +17,16 @@ nav_order: 1
   - Additional Software
   - Dotfiles
 
+---
+## Guides
+
+- [Tails Autostart]
+- [Flatpak]
+- [Signal]
+- [Telegram]
+- [Bisq]
+- [Running Tails in virt-manager]
+
 ----
 [Tails]: https://tails.net
 [Install Tails]: https://tails.net/install/index.en.html
@@ -24,3 +34,9 @@ nav_order: 1
 [Connect to Internet]: https://tails.net/doc/anonymous_internet/tor/index.en.html
 [Create the Persistent Storage]: https://tails.net/doc/persistent_storage/index.en.html
 [Configure the Persistent Storage]: https://tails.net/doc/persistent_storage/configure/index.en.html
+[Tails Autostart]: tails-autostart/tails-autostart.html
+[Flatpak]: flatpak/flatpak.html
+[Signal]: signal/signal.html
+[Telegram]: telegram/telegram.html
+[Bisq]: bisq/bisq.html
+[Running Tails in virt-manager]: running-in-virt-manager/running-in-virt-manager.html
