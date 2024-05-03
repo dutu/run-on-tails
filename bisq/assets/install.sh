@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# This script automates the installation and configuration of Bisq on a Tails OS system,
+#
+# FUNCTIONAL OVERVIEW:
+# - Verification of the Bisq installer's presence.
+# - Installation of the Bisq application with dpkg.
+# - Removal of automatically created desktop icons to clean up after installation.
+# - Deployment of Tor configuration for Bisq.
+# - Restart of the onion-grater service to apply new configurations.
+#
+# The script requires administrative privileges to perform system modifications.
+
+
 # Function to print messages in blue
 echo_blue() {
   if [ -t 1 ]; then

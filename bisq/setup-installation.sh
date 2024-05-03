@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# This script facilitates the setup and installation of the Bisq application on Tails OS.
+#
+# FUNCTIONAL OVERVIEW:
+# - Creating necessary persistent directories and copying utility files.
+# - Downloading Bisq binary, signature file, and GPG key for verification.
+# - Importing and verifying the GPG key to ensure the authenticity of the download.
+# - Setting up desktop icons in both local and persistent directories.
+
 # Function to print messages in blue
 echo_blue() {
   echo -e "\033[1;34m$1\033[0m"
@@ -23,10 +31,10 @@ persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
 local_desktop_dir="/home/amnesia/.local/share/applications"
 
 # Check if Bisq is already installed
-if [ -f "/opt/bisq/bin/Bisq" ]; then
-  echo_red "Bisq is already installed, please reboot Tails and run the script again..."
-  exit 1
-fi
+# if [ -f "/opt/bisq/bin/Bisq" ]; then
+#  echo_red "Bisq is already installed, please reboot Tails and run the script again..."
+#  exit 1
+# fi
 
 echo_blue "Creating persistent directory for Bisq..."
 mkdir -p $persistence_dir/bisq/Bisq || { echo_red "Failed to create directory $persistence_dir/bisq/Bisq"; exit 1; }

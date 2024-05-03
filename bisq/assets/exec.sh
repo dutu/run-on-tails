@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# This script serves as the execution entry point for the Bisq application from a desktop menu icon,
+# specifically tailored for use in the Tails OS. It is intended to be linked as the 'Exec' command
+# in a .desktop file, enabling users to start Bisq directly from the desktop interface.
+#
+# FUNCTIONAL OVERVIEW:
+# - Automatic installation and configuration of Bisq if not already set up.
+# - Linking Bisq data directories to persistent storage to preserve user data across sessions.
+#
+# NOTE:
+# This script assumes that Bisq's related utility scripts and files are correctly placed and accessible
+# in the specified directories.
+
 # Function to print messages in blue
 echo_blue() {
   if [ -t 1 ]; then
