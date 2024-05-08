@@ -108,10 +108,10 @@ $ sudo nano ~/.electrum/config
 
 * Remove Electrum application files:
   ```shell
-  $ persistence_dir="/home/amnesia/Persistent"
-  $ rm -fr $persistence_dir/electrum
+  $ rm -fr /home/amnesia/Persistent/electrum
+  $ rm -f /live/persistence/TailsData_unlocked/dotfiles/.local/share/applications/electrum.desktop
   ```
-
+  
 {: .important }
 Electrum wallet directory located at `/home/amnesia/.electrum/wallets` is not deleted.
 
