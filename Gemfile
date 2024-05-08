@@ -8,4 +8,4 @@ gem "just-the-docs", "0.8.2" # pinned to the current release
 
 gem 'jekyll-sitemap'
 
-# gem 'wdm', '>= 0.1.0' if Gem.win_platform? # avoid polling for changes in windows
+gem 'wdm', '>= 0.1.0' if Gem.win_platform? # avoid polling for changes in windows
