@@ -46,7 +46,8 @@ mkdir -p "${persistence_dir}/electrum" || echo_red "Failed to create directory $
 # Copy utility files to persistent storage and make scripts executable
 echo_blue "Copying Electrum utility files to persistent storage..."
 assets_dir=$(dirname "$0")/assets
-rsync -av "${assets_dir}/" "${persistence_dir}/bisq/utils/" || echo_red "Failed to rsync files to $persistence_dir/electrum/utils"
+rsync -av "${assets_dir}/electrum.png" "${persistence_dir}/electrum/" || echo_red "Failed to rsync files to $persistence_dir/electrum/"
+rsync -av "${assets_dir}/" "${persistence_dir}/electrum/utils/" || echo_red "Failed to rsync files to $persistence_dir/electrum/utils"
 find "${persistence_dir}/electrum/utils" -type f -name "*.sh" -exec chmod +x {} \; || echo_red "Failed to make scripts executable"
 
 # Download and import GPG key
@@ -71,8 +72,8 @@ curl -L -o "${appimage_filename}" "${url_base}/${appimage_filename}" || echo_red
 curl -L -o "${appimage_signature_filename}" "${url_base}/${appimage_signature_filename}" || echo_red "Failed to download Electrum signature."
 OUTPUT=$(gpg --verify "${appimage_signature_filename}" "${appimage_filename}" 2>&1)
 if ! echo "$OUTPUT" | grep -q "Good signature from"; then
-    echo_red "Verification failed: $OUTPUT"
-    exit 1
+  echo_red "Verification failed: $OUTPUT"
+  exit 1
 fi
 mkdir -p "${persistence_dir}/electrum"
 mv "${appimage_filename}" "${appimage_signature_filename}" "${persistence_dir}/electrum/"
@@ -87,8 +88,8 @@ curl -L -o "${package_filename}" "${url_base}/${package_filename}" || echo_red "
 curl -L -o "${package_signature_filename}" "${url_base}/${package_signature_filename}" || echo_red "Failed to download Electrum signature."
 OUTPUT=$(gpg --verify "${package_signature_filename}" "${package_filename}" 2>&1)
 if ! echo "$OUTPUT" | grep -q "Good signature from"; then
-    echo_red "Verification failed: $OUTPUT"
-    exit 1
+  echo_red "Verification failed: $OUTPUT"
+  exit 1
 fi
 
 echo_blue "Electrum source package has been successfully verified."
@@ -106,14 +107,14 @@ persistent_desktop_file="${dotfiles_dir}/.local/share/applications/electrum.desk
 cp "Electrum-${VERSION}/electrum.desktop" ${persistent_desktop_file}
 cp "Electrum-${VERSION}/electrum/gui/icons/electrum.png" $persistence_dir/electrum/utils/
 # Update `Icon` entry of the .desktop file to point to Electrum icon file
-desktop-file-edit --set-icon="$persistence_dir/electrum/utils/electrum.png" ${persistent_desktop_file}
+desktop-file-edit --set-icon="$persistence_dir/electrum/electrum.png" ${persistent_desktop_file}
 # Update `Exec` entry of the .desktop file to run `exec.sh`:
 sed -i "s|Exec=electrum \(.*\)|Exec=$persistence_dir/electrum/utils/exec.sh \1|" $persistent_desktop_file
 # Make the menu item visible in "Applications ▸ Other"
 desktop-file-edit --remove-category="Network" $persistent_desktop_file
 # Create a symbolic link to it in the local .desktop directory, if it doesn't exist
 if [ ! -L "$local_desktop_dir/electrum.desktop" ]; then
-    ln -s "$persistent_desktop_dir/electrum.desktop" "$local_desktop_dir/electrum.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
+  ln -s "$persistent_desktop_dir/electrum.desktop" "$local_desktop_dir/electrum.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
 fi
 
 echo_blue "Electrum installation setup completed successfully."
