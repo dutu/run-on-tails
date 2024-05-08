@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Sparrow Bitcoin Wallet
+description: A guide on how to install and run Sparrow Bitcoin Wallet on Tails
 nav_order: 70
 ---
 

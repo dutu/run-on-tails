@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Telegram
+description: A guide on how to install and run Telegram on Tails
 nav_order: 40
 ---
 

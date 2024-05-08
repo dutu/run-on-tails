@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Bisq
+description: A guide on how to install and run Bisq on Tails
 nav_order: 50
 ---
 

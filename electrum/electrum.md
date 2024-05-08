@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Electrum
+description: A guide on how to install and run Electrum Bitcoin Wallet on Tails
 nav_order: 60
 ---
 
@@ -20,6 +21,8 @@ nav_order: 60
 [Electrum] is an open-source, secure, versatile Bitcoin wallet, known for its speed and simplicity. 
 
 Electrum Bitcoin Wallet comes pre-installed on Tails, however it is not the latest version. This guide can be used to add the latest Electrum version.
+
+![electrum.png](electrum.png)
 
 
 ---

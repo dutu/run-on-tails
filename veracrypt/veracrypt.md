@@ -1,6 +1,7 @@
 ---
 layout: page
 title: VeraCrypt
+description: A guide on how to install and run Veracrypt on Tails
 nav_order: 800
 ---
 

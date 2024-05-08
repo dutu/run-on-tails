@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Running Tails in virt-manager
+description: A guide on how to run Tails in virt-manager
 nav_order: 930
 ---
 

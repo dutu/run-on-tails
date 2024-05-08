@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Flatpak
+description: A guide on how to install and run Flatpak on Tails
 nav_order: 820
 ---
 

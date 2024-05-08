@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Tails Autostart
+description: A guide on how to install and run Tails Autostart on Tails
 nav_order: 810
 ---
 

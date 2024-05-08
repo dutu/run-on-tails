@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Signal
+description: A guide on how to install and run Signal on Tails
 nav_order: 30
 ---
 
