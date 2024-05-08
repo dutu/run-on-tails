@@ -20,11 +20,12 @@ nav_order: 1
 ---
 ## Guides
 
-- [Tails Autostart]
-- [Flatpak]
 - [Signal]
 - [Telegram]
 - [Bisq]
+- [Electrum]
+- [Tails Autostart]
+- [Flatpak]
 - [Running Tails in virt-manager]
 
 ----
@@ -40,3 +41,4 @@ nav_order: 1
 [Telegram]: telegram/telegram.html
 [Bisq]: bisq/bisq.html
 [Running Tails in virt-manager]: running-in-virt-manager/running-in-virt-manager.html
+[Electrum]: electrum/electrum.html

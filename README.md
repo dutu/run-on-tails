@@ -8,15 +8,14 @@ This Github repository contains all sources and is used for Issue tracking.
 
 ## What is Run-on-Tails?
 
-Run-on-Tails is a guide that helps you add and run various applications on [Tails OS](https://tails.net).
+Run-on-Tails is a collection of guides that helps you add and run various applications on [Tails OS](https://tails.net).
 
-### Applications
-
-* Tails
-
-### Utilities
-
-* Tails Autostart
-* Flatpak
+- Signal
+- Telegram
+- Bisq
+- Electrum
+- Tails Autostart
+- Flatpak
+- Running Tails in virt-manager
 
 ---
