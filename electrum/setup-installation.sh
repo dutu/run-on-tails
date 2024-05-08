@@ -46,7 +46,6 @@ mkdir -p "${persistence_dir}/electrum" || echo_red "Failed to create directory $
 # Copy utility files to persistent storage and make scripts executable
 echo_blue "Copying Electrum utility files to persistent storage..."
 assets_dir=$(dirname "$0")/assets
-rsync -av "${assets_dir}/electrum.png" "${persistence_dir}/electrum/" || echo_red "Failed to rsync files to $persistence_dir/electrum/"
 rsync -av "${assets_dir}/" "${persistence_dir}/electrum/utils/" || echo_red "Failed to rsync files to $persistence_dir/electrum/utils"
 find "${persistence_dir}/electrum/utils" -type f -name "*.sh" -exec chmod +x {} \; || echo_red "Failed to make scripts executable"
 
@@ -105,7 +104,7 @@ mkdir -p "${local_desktop_dir}" "${persistent_desktop_dir}"
 # Create desktop menu icon
 persistent_desktop_file="${dotfiles_dir}/.local/share/applications/electrum.desktop"
 cp "Electrum-${VERSION}/electrum.desktop" ${persistent_desktop_file}
-cp "Electrum-${VERSION}/electrum/gui/icons/electrum.png" $persistence_dir/electrum/utils/
+cp "Electrum-${VERSION}/electrum/gui/icons/electrum.png" $persistence_dir/electrum/
 # Update `Icon` entry of the .desktop file to point to Electrum icon file
 desktop-file-edit --set-icon="$persistence_dir/electrum/electrum.png" ${persistent_desktop_file}
 # Update `Exec` entry of the .desktop file to run `exec.sh`
