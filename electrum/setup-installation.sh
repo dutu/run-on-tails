@@ -108,7 +108,7 @@ cp "Electrum-${VERSION}/electrum.desktop" ${persistent_desktop_file}
 cp "Electrum-${VERSION}/electrum/gui/icons/electrum.png" $persistence_dir/electrum/utils/
 # Update `Icon` entry of the .desktop file to point to Electrum icon file
 desktop-file-edit --set-icon="$persistence_dir/electrum/electrum.png" ${persistent_desktop_file}
-# Update `Exec` entry of the .desktop file to run `exec.sh`:
+# Update `Exec` entry of the .desktop file to run `exec.sh`
 sed -i "s|Exec=electrum \(.*\)|Exec=$persistence_dir/electrum/utils/exec.sh \1|" $persistent_desktop_file
 # Make the menu item visible in "Applications ▸ Other"
 desktop-file-edit --remove-category="Network" $persistent_desktop_file
