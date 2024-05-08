@@ -40,11 +40,11 @@ persistence_dir="/home/amnesia/Persistent"
 
 # Function to apply udev rules needed for the HW wallet devices to be usable
 function apply_udev_rules {
-  local rules_src="${persistence_dir}/electrum/udev/*.rules"
+ local rules_src="${persistence_dir}/electrum/udev/"  # Directory containing .rules files
   local rules_dest="/etc/udev/rules.d/"
 
   # Copy the rules file to /etc/udev/rules.d/
-  if ! rsync -a "${rules_src}" "${rules_dest}"; then
+  if ! rsync -a ${rules_src}*.rules "${rules_dest}"; then
     echo_red "Failed to copy udev rules."
     return 1  # Return failure status
   fi
