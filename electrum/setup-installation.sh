@@ -94,7 +94,7 @@ fi
 echo_blue "Electrum source package has been successfully verified."
 
 echo_blue "Extracting and copying udev rules for the HW wallet devices..."
-tar -xzvf "${package_filename}"
+tar -xzf "${package_filename}"
 rm -fr "${persistence_dir}/electrum/udev"
 rsync -av "Electrum-${VERSION}/contrib/udev/" "${persistence_dir}/electrum/udev/"
 
