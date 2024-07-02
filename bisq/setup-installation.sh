@@ -19,7 +19,7 @@ echo_red() {
 }
 
 # Define version and file locations
-VERSION="1.9.15"
+VERSION="1.9.17"
 url_base="https://github.com/bisq-network/bisq/releases/download/v${VERSION}"
 binary_filename="Bisq-64bit-${VERSION}.deb"
 signature_filename="${binary_filename}.asc"

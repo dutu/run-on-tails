@@ -23,7 +23,7 @@ nav_order: 50
 
 
 ---
-### Install Bisq v1.9.15
+### Install Bisq v1.9.17
 
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
