@@ -23,7 +23,7 @@ nav_order: 50
 
 
 ---
-### Install Bisq v1.9.17
+### Install Bisq v1.9.18
 
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
@@ -58,6 +58,14 @@ $ git clone https://github.com/dutu/run-on-tails.git
 ### Backup User Data
 
 * While Bisq is closed, copy your [Bisq Data directory] located at `/home/amnesia/Persistent/bisq/Bisq` to a backup location.
+
+
+---
+### Update Bisq
+
+* Follow the instructions to Install bisq
+
+* Restart Tails 
 
 
 ---

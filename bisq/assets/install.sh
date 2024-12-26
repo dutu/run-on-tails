@@ -35,7 +35,7 @@ echo_red() {
 }
 
 # Define version and file locations
-VERSION="1.9.17"
+VERSION="1.9.18"
 persistence_dir="/home/amnesia/Persistent"
 bisq_installer="${persistence_dir}/bisq/Bisq-64bit-${VERSION}.deb"
 
