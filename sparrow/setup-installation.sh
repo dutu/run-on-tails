@@ -24,18 +24,11 @@ manifest_signature_filename="sparrow-${VERSION}-manifest.txt.asc"
 key_url_base="https://keybase.io/craigraw"
 key_filename="pgp_keys.asc"
 expected_fingerprint="D4D0 D320 2FC0 6849 A257 B38D E946 1833 4C67 4B40"
-persistence_dir="/home/amnesia/Persistent"
 dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
+persistent_app_dir="$dotfiles_dir/.sparrow"
+local_app_dir="/home/amnesia/.sparrow"
 persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
 local_desktop_dir="/home/amnesia/.local/share/applications"
-
-echo_blue "Creating persistent directory for Sparrow..."
-mkdir -p "${persistence_dir}/Sparrow" || echo_red "Failed to create directory $persistence_dir/sparrow"
-## Copy utility files to persistent storage and make scripts executable
-#echo_blue "Copying Sparrow utility files to persistent storage..."
-#assets_dir=$(dirname "$0")/assets
-#rsync -av "${assets_dir}/" "${persistence_dir}/electrum/utils/" || echo_red #"Failed to rsync files to $persistence_dir/electrum/utils"
-#find "${persistence_dir}/electrum/utils" -type f -name "*.sh" -exec chmod +x {} \; || echo_red "Failed to make scripts executable"
 
 # Download and import GPG key
 echo_blue "Downloading and importing signing GPG key..."
@@ -70,14 +63,24 @@ if ! echo "$OUTPUT" | grep -q "${tar_filename}: OK"; then
 fi
 echo_blue "Sparrow .tar.gz package has been successfully verified."
 
-mkdir -p "${persistence_dir}/Sparrow/data"
-tar -xzf "${tar_filename}" -C "${persistence_dir}"
+# Create app directories (.dotfiles)
+echo_blue "Creating persistent directory for Sparrow..."
+mkdir -p "${persistent_app_dir}/data" || echo_red "Failed to create directory ${persistent_app_dir}/data"
 
+tar -xzf "${tar_filename}"
+# clean old installation if exists
+rm -rf ${persistent_app_dir}/bin ${persistent_app_dir}/lib
+rsync -av "Sparrow/" "${persistent_app_dir}/"
+
+# Create a symbolic link to persitent app directory, if it doesn't exist
+if [ ! -L "$local_app_dir" ]; then
+  ln -s "$persistent_app_dir" "$local_app_dir" \
+    || { echo_red "Failed to create symbolic link for "$local_app_dir""; exit 1; }
+fi
 
 echo_blue "Creating desktop menu icon..."
 # Create desktop directories
 mkdir -p "${local_desktop_dir}" "${persistent_desktop_dir}"
-assets_dir=$(dirname "$0")/assets
 # Copy .desktop file to persistent directory
 assets_dir=$(dirname "$0")/assets
 cp "$assets_dir/sparrow.desktop" "$persistent_desktop_dir"  || { echo_red "Failed to copy .desktop file to persistent directory $persistent_desktop_dir"; exit 1; }

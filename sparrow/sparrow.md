@@ -57,10 +57,16 @@ $ git clone https://github.com/dutu/run-on-tails.git
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
 
-* Remove Electrum application files:
+* Remove Sparrow application files:
   ```shell
-  $ rm -fr /home/amnesia/Persistent/Sparrow
+  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/lib
+  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/bin
   $ rm -f /live/persistence/TailsData_unlocked/dotfiles/.local/share/applications/sparrow.desktop
+  ```
   
+{: .important }
+Sparrow data directory which contains wallet and configuration files is not deleted.
+It is located at `/live/persistence/TailsData_unlocked/dotfiles/.sparrow/data`
+
 ---
 [Sparrow]: https://www.sparrowwallet.com/
