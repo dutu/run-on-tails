@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Sparrow
-Comment=Sparrow
-Exec=/home/amnesia/.sparrow/bin/Sparrow -d /home/amnesia/.sparrow/data %U
-Icon=/home/amnesia/.sparrow/lib/Sparrow.png
+Name=Sparrow Bitcoin Wallet
+Comment=Sparrow Bitcoin Wallet
+Exec=/home/amnesia/Persistent/Sparrow/bin/Sparrow -d /home/amnesia/.sparrow %U
+Icon=/home/amnesia/Persistent/Sparrow/lib/Sparrow.png
 Terminal=false
 Type=Application
 Categories=Finance;
