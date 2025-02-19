@@ -33,22 +33,22 @@ $ git clone https://github.com/dutu/run-on-tails.git
 ```
 
 * Setup Sparrow:
-  ```shell
-  $ chmod +x ./run-on-tails/electrum/setup-installation.sh 
-  $ ./run-on-tails/electrum/setup-installation.sh 
-  ```
+```shell
+$ chmod +x ./run-on-tails/sparrow/setup-installation.sh 
+$ ./run-on-tails/sparrow/setup-installation.sh 
+```
   * Wait for the message `Sparrow installation setup completed successfully.`
 
  ---
 ### How to use it
 
-* Choose **Applications ▸ Other ▸ Electrum**
+* Choose **Applications ▸ Other ▸ Sparrow**
 
 
 ---
 ### Backup your wallet
 
-* While Sparrow is closed, copy your Sparrow wallet directory located at `/home/amnesia//Persistent/Sparrow/data/wallets` to a backup location.
+* While Sparrow is closed, copy your Sparrow wallet directory located at `/home/amnesia/.sparrow/data/wallets` to a backup location.
 
 
 ---
@@ -66,7 +66,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
   
 {: .important }
 Sparrow data directory which contains wallet and configuration files is not deleted.
-It is located at `/live/persistence/TailsData_unlocked/dotfiles/.sparrow/data`
+It is located at `/home/amnesia/.sparrow/data`
 
 ---
 [Sparrow]: https://www.sparrowwallet.com/
