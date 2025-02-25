@@ -110,4 +110,4 @@ rm -f "${persistence_dir}/bisq/"*.deb*
 mv "${binary_filename}" "${signature_filename}" "${persistence_dir}/bisq/"
 echo_blue "Files moved to persistent directory ${persistence_dir}/bisq/"
 
-echo_blue "Bisq installation setup completed successfully."
+echo_blue "Bisq v${VERSION} installation setup completed successfully."
