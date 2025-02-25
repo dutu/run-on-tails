@@ -18,8 +18,55 @@ nav_order: 70
 ---
 ### Overview
 
-[Sparrow](https://www.sparrowwallet.com/){:target="_blank" rel="noopener"} is an open-source Bitcoin wallet focused on security, privacy, and usability. It provides detailed, user-friendly information about transactions and UTXOs, supporting financial self-sovereignty. 
+[Sparrow] is an open-source Bitcoin wallet focused on security, privacy, and usability. It provides detailed, user-friendly information about transactions and UTXOs, supporting financial self-sovereignty. 
+![sparrow.png](sparrow.png)
+
+---
+### Install the latest version of Sparrow
+
+* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+
+* Clone Run-on-Tails GitHub repository:
+```shell
+$ cd ~/Downloads
+$ git clone https://github.com/dutu/run-on-tails.git
+```
+
+* Setup Sparrow:
+```shell
+$ chmod +x ./run-on-tails/sparrow/setup-installation.sh 
+$ ./run-on-tails/sparrow/setup-installation.sh 
+```
+  * Wait for the message `Sparrow installation setup completed successfully.`
+
+ ---
+### How to use it
+
+* Choose **Applications ▸ Other ▸ Sparrow**
 
 
-Coming soon
-{: .label .label-yellow }
+---
+### Backup your wallet
+
+* While Sparrow is closed, copy your Sparrow wallet directory located at `/home/amnesia/.sparrow/data/wallets` to a backup location.
+
+
+---
+### Remove the latest version of Sparrow
+
+* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+
+
+* Remove Sparrow application files:
+  ```shell
+  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/lib
+  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/bin
+  $ rm -f /live/persistence/TailsData_unlocked/dotfiles/.local/share/applications/sparrow.desktop
+  ```
+  
+{: .important }
+Sparrow data directory which contains wallet and configuration files is not deleted.
+It is located at `/home/amnesia/.sparrow/data`
+
+---
+[Sparrow]: https://www.sparrowwallet.com/
