@@ -43,6 +43,44 @@ local_desktop_dir="/home/amnesia/.local/share/applications"
 #  exit 1
 # fi
 
+# Download the GPG key
+echo_blue "Downloading and importing signing GPG key..."
+curl -L -o "${key_filename}" "${url_base}/${key_filename}" || { echo_red "Failed to download GPG key."; exit 1; }
+gpg --import "${key_filename}" || { echo_red "Failed to import GPG key."; exit 1; }
+
+# Extract imported fingerprints
+imported_fingerprints=$(gpg --with-colons --fingerprint | grep -A 1 'pub' | grep 'fpr' | cut -d: -f10 | tr -d '\n')
+
+# Remove spaces from the expected fingerprint for comparison
+formatted_expected_fingerprint=$(echo "$expected_fingerprint" | tr -d ' ')
+
+# Check if the expected fingerprint is in the list of imported fingerprints
+if [[ ! "$imported_fingerprints" =~ $formatted_expected_fingerprint ]]; then
+  echo_red "The imported GPG key fingerprint does not match the expected fingerprint."
+  exit 1
+fi
+
+echo_blue "The imported GPG key fingerprint matches the expected fingerprint."
+
+# Download Bisq binary
+echo_blue "Downloading Bisq version ${VERSION}..."
+curl -L -o "${binary_filename}" "${url_base}/${binary_filename}" || { echo_red "Failed to download Bisq binary."; exit 1; }
+
+# Download Bisq signature file
+echo_blue "Downloading Bisq signature..."
+curl -L -o "${signature_filename}" "${url_base}/${signature_filename}" || { echo_red "Failed to download Bisq signature."; exit 1; }
+
+# Verify the downloaded binary with the signature
+echo_blue "Verifying the signature of the downloaded file..."
+OUTPUT=$(gpg --digest-algo SHA256 --verify "${signature_filename}" "${binary_filename}" 2>&1)
+
+if ! echo "$OUTPUT" | grep -q "Good signature from"; then
+    echo_red "Verification failed: $OUTPUT"
+    exit 1
+fi
+
+echo_blue "Bisq binaries have been successfully verified."
+
 echo_blue "Creating persistent directory for Bisq..."
 mkdir -p $persistence_dir/bisq/Bisq || { echo_red "Failed to create directory $persistence_dir/bisq/Bisq"; exit 1; }
 
@@ -62,46 +100,6 @@ cp "$assets_dir/bisq.desktop" "$persistent_desktop_dir"  || { echo_red "Failed t
 if [ ! -L "$local_desktop_dir/bisq.desktop" ]; then
     ln -s "$persistent_desktop_dir/bisq.desktop" "$local_desktop_dir/bisq.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
 fi
-
-
-# Download Bisq binary
-echo_blue "Downloading Bisq version ${VERSION}..."
-curl -L -o "${binary_filename}" "${url_base}/${binary_filename}" || { echo_red "Failed to download Bisq binary."; exit 1; }
-
-# Download Bisq signature file
-echo_blue "Downloading Bisq signature..."
-curl -L -o "${signature_filename}" "${url_base}/${signature_filename}" || { echo_red "Failed to download Bisq signature."; exit 1; }
-
-# Download the GPG key
-echo_blue "Downloading signing GPG key..."
-curl -L -o "${key_filename}" "${url_base}/${key_filename}" || { echo_red "Failed to download GPG key."; exit 1; }
-
-# Import the GPG key
-echo_blue "Importing the GPG key..."
-gpg --import "${key_filename}" || { echo_red "Failed to import GPG key."; exit 1; }
-
-# Extract imported fingerprints
-imported_fingerprints=$(gpg --with-colons --fingerprint | grep -A 1 'pub' | grep 'fpr' | cut -d: -f10 | tr -d '\n')
-
-# Remove spaces from the expected fingerprint for comparison
-formatted_expected_fingerprint=$(echo "$expected_fingerprint" | tr -d ' ')
-
-# Check if the expected fingerprint is in the list of imported fingerprints
-if [[ ! "$imported_fingerprints" =~ $formatted_expected_fingerprint ]]; then
-  echo_red "The imported GPG key fingerprint does not match the expected fingerprint."
-  exit 1
-fi
-
-# Verify the downloaded binary with the signature
-echo_blue "Verifying the signature of the downloaded file..."
-OUTPUT=$(gpg --digest-algo SHA256 --verify "${signature_filename}" "${binary_filename}" 2>&1)
-
-if ! echo "$OUTPUT" | grep -q "Good signature from"; then
-    echo_red "Verification failed: $OUTPUT"
-    exit 1
-fi
-
-echo_blue "Bisq binaries have been successfully verified."
 
 # Move the binary and its signature to the persistent directory
 mkdir -p "${persistence_dir}/bisq"
