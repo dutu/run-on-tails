@@ -18,7 +18,8 @@ nav_order: 70
 ---
 ### Overview
 
-[Sparrow] is an open-source Bitcoin wallet focused on security, privacy, and usability. It provides detailed, user-friendly information about transactions and UTXOs, supporting financial self-sovereignty. 
+[Sparrow] is an open-source Bitcoin wallet focused on security, privacy, and usability. It provides detailed, user-friendly information about transactions and UTXOs, supporting financial self-sovereignty.
+
 ![sparrow.png](sparrow.png)
 
 ---
@@ -43,6 +44,9 @@ $ ./run-on-tails/sparrow/setup-installation.sh
 ### How to use it
 
 * Choose **Applications ▸ Other ▸ Sparrow**
+
+{: .note }
+If you use a public server, set Proxy URL to `127.0.0.1:9050`.
 
 
 ---
