@@ -43,10 +43,10 @@ jobs:
           fi
           ls -la _site
       - name: Upload artifact
-        # Uploads the site build using artifact name "pages-artifact"
+        # Uploads the site build using the artifact name "github-pages"
         uses: actions/upload-artifact@v4
         with:
-          name: pages-artifact
+          name: github-pages
           path: ./_site
 
   deploy:
@@ -60,4 +60,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact_name: pages-artifact
+          artifact_name: github-pages
