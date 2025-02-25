@@ -2,26 +2,20 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -30,9 +24,9 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -41,14 +35,20 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Verify _site exists
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "_site directory not found!"
+            exit 1
+          fi
+          ls -la _site
       - name: Upload artifact
-        # Uploads the site build using the updated artifact action v4
+        # Uploads the site build using artifact name "pages-artifact"
         uses: actions/upload-artifact@v4
         with:
-          name: artifact
+          name: pages-artifact
           path: ./_site
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -60,4 +60,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact_name: artifact
+          artifact_name: pages-artifact
