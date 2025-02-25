@@ -101,6 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.4.1)
+  jekyll-sass-converter (~> 3.1.0)
   jekyll-sitemap
   just-the-docs (= 0.10.1)
   wdm (~> 0.1.1)
