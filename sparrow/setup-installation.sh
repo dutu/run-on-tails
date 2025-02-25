@@ -73,7 +73,7 @@ tar -xzf "${tar_filename}" -C "${persistence_dir}"
 echo_blue "Creating persistent data directory..."
 mkdir -p "${persistent_data_dir}" || echo_red "Failed to create directory ${persistent_data_dir}"
 
-# Create a symbolic link to persitent app directory, if it doesn't exist
+# Create a symbolic link to persistent app directory, if it doesn't exist
 if [ ! -L "$local_data_dir" ]; then
   ln -s "$persistent_data_dir" "$local_data_dir" \
     || { echo_red "Failed to create symbolic link for "$local_data_dir""; exit 1; }
@@ -90,5 +90,5 @@ if [ ! -L "$local_desktop_dir/sparrow.desktop" ]; then
   ln -s "$persistent_desktop_dir/sparrow.desktop" "$local_desktop_dir/sparrow.desktop" || { echo_red "Failed to create symbolic link for .desktop file"; exit 1; }
 fi
 
-echo_blue "Sparrow installation setup completed successfully."
+echo_blue "Sparrow v${VERSION} installation setup completed successfully."
 
