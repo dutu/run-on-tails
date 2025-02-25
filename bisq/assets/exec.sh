@@ -36,16 +36,30 @@ echo_red() {
 
 # Define file locations
 persistence_dir="/home/amnesia/Persistent"
+bisq_dir="${persistence_dir}/bisq"
 data_dir="${persistence_dir}/bisq/Bisq"
 
-# Check if Bisq is already installed and configured
-if [ ! -f "/opt/bisq/bin/Bisq" ] || [ ! -f "/etc/onion-grater.d/bisq.yml" ]; then
+# Find the highest version available
+VERSION=$(ls "${bisq_dir}"/Bisq-64bit-*.deb 2>/dev/null | sed -E 's|.*/Bisq-64bit-([0-9]+\.[0-9]+\.[0-9]+)\.deb|\1|' | sort -V | tail -n 1)
+bisq_installer="${bisq_dir}/Bisq-64bit-${VERSION}.deb"
+
+# Check if the Bisq installer exists
+if [ ! -f "${bisq_installer}" ]; then
+  echo_red "Bisq installer not found at ${bisq_installer}."
+  exit 1
+fi
+
+# Check if Bisq is already installed and its version
+installed_version=$(dpkg-query -W -f='${Version}' bisq 2>/dev/null | cut -d'-' -f1)
+
+# Check if installation or configuration is required
+if [ ! -f "/opt/bisq/bin/Bisq" ] || [ ! -f "/etc/onion-grater.d/bisq.yml" ] || [ "$installed_version" != "$VERSION" ]; then
   echo_blue "Installing Bisq and configuring system..."
   pkexec "${persistence_dir}/bisq/utils/install.sh"
   # Redirect user data to Tails Persistent Storage
   ln -s $data_dir /home/amnesia/.local/share/Bisq
 else
-  echo_blue "Bisq is already installed and configured."
+  echo_blue "Bisq v${VERSION} is already installed and correctly configured."
 fi
 
 echo_blue "Starting Bisq..."

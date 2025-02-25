@@ -34,9 +34,12 @@ echo_red() {
   fi
 }
 
-# Define version and file locations
-VERSION="1.9.18"
+# Define file locations
 persistence_dir="/home/amnesia/Persistent"
+bisq_dir="${persistence_dir}/bisq"
+
+# Find the highest version available
+VERSION=$(ls "${bisq_dir}"/Bisq-64bit-*.deb 2>/dev/null | sed -E 's|.*/Bisq-64bit-([0-9]+\.[0-9]+\.[0-9]+)\.deb|\1|' | sort -V | tail -n 1)
 bisq_installer="${persistence_dir}/bisq/Bisq-64bit-${VERSION}.deb"
 
 # Check if the Bisq installer exists
@@ -66,4 +69,4 @@ cp "${BISQ_CONFIG_FILE}" /etc/onion-grater.d/bisq.yml || { echo_red "Failed to c
 echo_blue "Restarting onion-grater service..."
 systemctl restart onion-grater.service || { echo_red "Failed to restart onion-grater service."; exit 1; }
 
-echo_blue "Bisq installation and configuration complete."
+echo_blue "Bisq v${VERSION} installation and configuration complete."
