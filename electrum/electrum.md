@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Electrum
+title: Electrum Bitcoin Wallet
 description: A guide on how to install and run Electrum Bitcoin Wallet on Tails
 nav_order: 60
 ---
 
-## Electrum
+## Electrum Bitcoin Wallet
 {: .no_toc }
 
 ## Table of contents
