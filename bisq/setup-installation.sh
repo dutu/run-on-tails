@@ -19,7 +19,14 @@ echo_red() {
 }
 
 # Define version and file locations
-VERSION="1.9.18"
+VERSION=$(wget -qO- https://api.github.com/repos/bisq-network/bisq/tags | grep -Po '"name": "v\K.*?(?=")' | grep -P '^\d+\.\d+\.\d+$' | sort -V | tail -n 1)
+
+# Validate the VERSION variable
+if [[ -z "$VERSION" || ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "Error: VERSION = $VERSION is empty or does not match the expected format 'd.d.d'."
+  exit 1
+fi
+
 url_base="https://github.com/bisq-network/bisq/releases/download/v${VERSION}"
 binary_filename="Bisq-64bit-${VERSION}.deb"
 signature_filename="${binary_filename}.asc"
