@@ -60,4 +60,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact-name: artifact
+          artifact_name: artifact
