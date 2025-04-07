@@ -69,6 +69,17 @@ if [ ! -e "$rules_file" ]; then
   fi
 fi
 
+# create link to persistent configuration
+# workaround from https://github.com/BitBoxSwiss/bitbox-wallet-app/issues/3131#issuecomment-2605634039
+persistent_conf_dir="${persistence_dir}/bitbox/conf"
+local_conf_dir="/home/amnesia/.config/bitbox"
+if [ ! -d "${persistent_conf_dir}" ]; then
+  mkdir -p "${persistent_conf_dir}" || { echo_red "Failed to create directory ${persistent_conf_dir}"; exit 1; }
+fi
+if [ ! -L "${local_conf_dir}" ]; then
+  ln -s "${persistent_conf_dir}" "${local_conf_dir}" || { echo_red "Failed to create symbolic link for ${local_conf_dir}"; exit 1; }
+fi
+
 echo_blue "Starting BitBoxApp..."
 # Get the BitBoxApp AppImage file path
 bitbox_AppImage=$(find ${persistence_dir}/bitbox/*.AppImage | tail -n 1)

@@ -38,16 +38,9 @@ key_filename="shiftcryptosec-509249B068D215AE.gpg.asc"
 expected_fingerprint="DD09 E413 0975 0EBF AE0D EF63 5092 49B0 68D2 15AE"
 persistence_dir="/home/amnesia/Persistent"
 dotfiles_dir="/live/persistence/TailsData_unlocked/dotfiles"
-persistent_desktop_dir="$dotfiles_dir/.local/share/applications"
+persistent_desktop_dir="${dotfiles_dir}/.local/share/applications"
 local_desktop_dir="/home/amnesia/.local/share/applications"
 assets_dir=$(dirname "$0")/assets
-
-echo_blue "Creating persistent directory for BitBoxApp..."
-mkdir -p "${persistence_dir}/bitbox" || echo_red "Failed to create directory $persistence_dir/bitbox"
-# Copy utility files to persistent storage and make scripts executable
-echo_blue "Copying BitBox asset files to persistent storage..."
-rsync -av "${assets_dir}/" "${persistence_dir}/bitbox/" || echo_red "Failed to rsync files to $persistence_dir/bitbox"
-find "${persistence_dir}/bitbox/utils" -type f -name "*.sh" -exec chmod +x {} \; || echo_red "Failed to make scripts executable"
 
 # Download and import GPG key
 echo_blue "Downloading and importing signing GPG key..."
@@ -62,7 +55,6 @@ if [[ ! "$imported_fingerprints" =~ $formatted_expected_fingerprint ]]; then
   echo_red "The imported GPG key fingerprint does not match the expected fingerprint."
   exit 1
 fi
-
 echo_blue "The imported GPG key fingerprint matches the expected fingerprint."
 
 # Download, verify, and move BitBox AppImage
@@ -74,15 +66,18 @@ if ! echo "$OUTPUT" | grep -q "Good signature from"; then
   echo_red "Verification failed: $OUTPUT"
   exit 1
 fi
+echo_blue "BitBox AppImage has been successfully verified."
+
+echo_blue "Creating persistent directory for BitBoxApp..."
+mkdir -p "${persistence_dir}/bitbox/conf" || echo_red "Failed to create directory $persistence_dir/bitbox/conf"
+
+# Copy utility files to persistent storage and make scripts executable
+echo_blue "Copying BitBox asset files to persistent storage..."
+rsync -av "${assets_dir}/" "${persistence_dir}/bitbox/" || echo_red "Failed to rsync files to $persistence_dir/bitbox"
+find "${persistence_dir}/bitbox/utils" -type f -name "*.sh" -exec chmod +x {} \; || echo_red "Failed to make scripts executable"
 mv "${appimage_filename}" "${appimage_signature_filename}" "${persistence_dir}/bitbox/"
 chmod +x "${persistence_dir}/bitbox/${appimage_filename}"
-
-echo_blue "BitBox AppImage has been successfully verified."
 echo_blue "Files moved to persistent directory ${persistence_dir}/bitbox/"
-
-# copy udev rules
-rsync -av "${assets_dir}/udev/" "${persistence_dir}/bitbox/udev/"
-cp "${assets_dir}/bitbox-icon.png" "${persistence_dir}/bitbox/"
 
 echo_blue "Creating desktop menu icon..."
 # Create desktop directories
@@ -95,3 +90,4 @@ if [ ! -L "${local_desktop_dir}/bitbox.desktop" ]; then
 fi
 
 echo_blue "BitBoxApp v${VERSION} installation setup completed successfully."
+
