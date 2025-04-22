@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=BitBoxApp for BitBox02 Hardware Wallet
+Exec=/home/amnesia/Persistent/bitbox/utils/exec.sh %u
+Icon=/home/amnesia/Persistent/bitbox/bitbox-icon.png
+Name=BitBox Bitcoin Wallet
+Categories=Finance;
+Terminal=false
+Type=Application
+

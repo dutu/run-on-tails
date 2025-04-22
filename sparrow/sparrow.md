@@ -52,25 +52,25 @@ If you use a public server, set Proxy URL to `127.0.0.1:9050`.
 ---
 ### Backup your wallet
 
-* While Sparrow is closed, copy your Sparrow wallet directory located at `/home/amnesia/.sparrow/data/wallets` to a backup location.
+* While Sparrow is closed, copy your Sparrow wallet directory located at `/live/persistence/TailsData_unlocked/dotfiles/.sparrow/wallets` to a backup location.
 
 
 ---
-### Remove the latest version of Sparrow
+### Remove Sparrow
+
+If you want to remove a currently installed version of Sparrow  (eg. in case of a clean new install)
 
 * Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
 
-
 * Remove Sparrow application files:
   ```shell
-  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/lib
-  $ rm -fr /live/persistence/TailsData_unlocked/dotfiles/.sparrow/bin
+  $ rm -fr /home/amnesia/Persistent/Sparrow/
   $ rm -f /live/persistence/TailsData_unlocked/dotfiles/.local/share/applications/sparrow.desktop
   ```
   
 {: .important }
 Sparrow data directory which contains wallet and configuration files is not deleted.
-It is located at `/home/amnesia/.sparrow/data`
+It is located at `/live/persistence/TailsData_unlocked/dotfiles/.sparrow/`
 
 ---
 [Sparrow]: https://www.sparrowwallet.com/
