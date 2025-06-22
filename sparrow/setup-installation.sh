@@ -18,7 +18,7 @@ if [[ -z "$VERSION" || ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   exit 1
 fi
 url_base="https://github.com/sparrowwallet/sparrow/releases/download/${VERSION}"
-tar_filename="sparrow-${VERSION}-x86_64.tar.gz"
+tar_filename="sparrowwallet-${VERSION}-x86_64.tar.gz"
 manifest_filename="sparrow-${VERSION}-manifest.txt"
 manifest_signature_filename="sparrow-${VERSION}-manifest.txt.asc"
 key_url_base="https://keybase.io/craigraw"
