@@ -34,7 +34,7 @@ Electrum Bitcoin Wallet comes pre-installed on Tails, however it is not the late
   * Close **Persistent Storage** window
 
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -106,7 +106,7 @@ $ sudo nano ~/.electrum/config
 ---
 ### Remove the latest version of Electrum
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Remove Electrum application files:

@@ -25,7 +25,7 @@ nav_order: 70
 ---
 ### Install the latest version of Sparrow
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 * Clone Run-on-Tails GitHub repository:
 ```shell
@@ -60,7 +60,7 @@ If you use a public server, set Proxy URL to `127.0.0.1:9050`.
 
 If you want to remove a currently installed version of Sparrow  (eg. in case of a clean new install)
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 * Remove Sparrow application files:
   ```shell

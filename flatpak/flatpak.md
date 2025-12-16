@@ -25,7 +25,7 @@ nav_order: 820
 * Make sure **Tails Autostart** utility has been installed. See [Tails Autostart].
 
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -78,7 +78,7 @@ Flatpak is now installed and flatpak applications can be added with `flatpak ins
 ---
 ### Remove Flatpak
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Remove persistent configuration: 

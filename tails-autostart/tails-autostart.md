@@ -25,7 +25,7 @@ This utility facilitates other applications to work properly.
 ---
 ### Install Tails Autostart
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Clone Run-on-Tails GitHub repository:  

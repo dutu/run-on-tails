@@ -78,7 +78,7 @@ Telegram application requires Flatpak package. Flatpak is installed as [addition
 ---
 ### For the Future: Update Telegram
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Update the application:
@@ -91,7 +91,7 @@ Telegram application requires Flatpak package. Flatpak is installed as [addition
 
 ### Remove Telegram
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Remove the application, and unused runtimes and SDK extensions:

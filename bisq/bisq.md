@@ -25,7 +25,7 @@ nav_order: 50
 ---
 ### Install the latest version of Bisq
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -71,7 +71,7 @@ $ git clone https://github.com/dutu/run-on-tails.git
 ---
 ### Remove Bisq
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Remove persistent configuration:

@@ -33,7 +33,7 @@ Although possible, the process for setting up a persistent configuration isn't c
 * Make sure **Flatpak** has been installed. See [Flatpak].
 
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Clone Run-on-Tails GitHub repository:
@@ -71,7 +71,7 @@ Signal application requires Flatpak package. Flatpak is installed as [additional
 ---
 ### For the Future: Update Signal
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Update the application:
@@ -82,7 +82,7 @@ Signal application requires Flatpak package. Flatpak is installed as [additional
 ---
 ### Remove Signal
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 
 * Remove the application, and unused runtimes and SDK extensions:

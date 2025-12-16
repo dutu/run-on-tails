@@ -29,7 +29,7 @@ The BitBox02 hardware wallet can also be used with several common software walle
 ---
 ### Install the latest version of the BitBoxApp
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 * Clone Run-on-Tails GitHub repository:
 ```shell
@@ -63,7 +63,7 @@ If you use a public server, set Proxy URL to `127.0.0.1:9050`.
 
 If you want to remove a currently installed version of the BitBoxApp (eg. in case of a clean new install)
 
-* Open a _Terminal_ window:  choose **Applications ▸ Utilities ▸ Terminal**
+* Open a _Console_:  choose **Apps ▸ System Tools ▸ Console**
 
 * Remove BitBoxApp application files:
   ```shell
