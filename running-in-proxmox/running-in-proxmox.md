@@ -27,7 +27,6 @@ Running Tails from a USB image in Proxmox allows you to use a Persistent Storage
 
 All commands in this instruction are run as root on the Proxmox host.
 
-{: .note }
 > **Last tested:** Tails 7.3.1 in Proxmox 9.1.2
 
 ---
