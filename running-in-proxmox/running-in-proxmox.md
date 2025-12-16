@@ -12,7 +12,7 @@ nav_order: 920
 {: .no_toc .text-delta }
 
 1. TOC
-   {:toc}
+{:toc}
 
 ---
 ### Overview
@@ -56,7 +56,6 @@ All commands in this instruction are run as root on the Proxmox host.
   wget https://tails.net/tails-signing.key
   gpg --import tails-signing.key
   ```
-
 Expected output (example):
   ```console
   gpg: key 0xDBB802B258ACD84F: public key "Tails developers <tails@boum.org>" imported
@@ -69,14 +68,12 @@ Expected output (example):
   ```bash
   gpg --verify tails-amd64.img.sig tails-amd64.img
   ```
-
 Expected result, you should see something like:
   ```console
   gpg: Signature made ...
   gpg:                using RSA key DBB802B258ACD84F
   gpg: Good signature from "Tails developers <tails@boum.org>"
   ```
-
 You may also see:
   ```console
   gpg: WARNING: This key is not certified with a trusted signature!
@@ -144,10 +141,8 @@ Expected result:
 
 * Import the USB image into Proxmox storage
   ```bash
-  
   qm importdisk $VMID tails-amd64.img $STORAGE
   ```
-
 This creates something like:
   ```console
   unused0: successfully imported disk 'vm-os:vm-301-disk-0'
@@ -173,9 +168,9 @@ This creates something like:
   ```bash
   qm set $VMID --delete boot
   ```
-  {: .note }
-  > This setup intentionally does not use a persistent EFI variables disk (NVRAM).<br>
-  > This matches the behavior of a real live USB device and avoids PXE boot issues.
+{: .note }
+> This setup intentionally does not use a persistent EFI variables disk (NVRAM).<br>
+> This matches the behavior of a real live USB device and avoids PXE boot issues.
 
 
 * Do not use ballooning with Tails:
@@ -206,8 +201,7 @@ Example printout:
   unused0: vm-os:vm-301-disk-0
   vmgenid: 5ddae391-ce59-41fb-bf81-93cbfd3218b7
   ```
-
-{: .important }
+{: .note }
 > There is `unused0: vm-os:vm-301-disk-0`<br>
 > This is expected and correct.<br>
 > The disk is intentionally not attached as scsi0, it is consumed directly by QEMU via<br>
