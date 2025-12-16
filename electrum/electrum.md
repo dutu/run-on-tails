@@ -29,7 +29,7 @@ Electrum Bitcoin Wallet comes pre-installed on Tails, however it is not the late
 ### Install the latest version of Electrum
 
 * [Configure the Persistent Storage] to have [Electrum Bitcoin Wallet feature] turned on:
-  * Choose **Applications ▸ System Tools ▸ Persistent Storage**
+  * Choose **Apps ▸ Tails ▸ Persistent Storage**
   * Turn on **Electrum Bitcoin Wallet** feature
   * Close **Persistent Storage** window
 
