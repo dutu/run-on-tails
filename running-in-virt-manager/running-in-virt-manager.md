@@ -17,8 +17,6 @@ nav_order: 930
 ---
 ### Overview
 
-Running Tails from a USB image is the only virtualization software that allows you to use a Persistent Storage in a virtual machine.
-
 Official Tails guide [Running Tails from a USB image], includes step 3 **Increase the size of the USB image**. 
 However, this is not sufficient. The partition and FAT File System also need to be resized. Follow the steps below to properly prepare the USB image.  
 
