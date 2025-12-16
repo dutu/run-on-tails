@@ -32,8 +32,9 @@ nav_order: 1
 - [Running Tails in Proxmox]
 - [Running Tails in virt-manager]
 
-> These instructions document configurations that were last tested on specific Tails and application versions.
+> These instructions document configurations that were last tested on specific Tails and application versions.<br>
 > Newer versions are often compatible, but are not guaranteed to work without adjustment.
+{: .fw-300 }
 
 ----
 [Tails]: https://tails.net
