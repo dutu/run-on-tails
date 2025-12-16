@@ -28,6 +28,7 @@ nav_order: 1
 - [VeraCrypt]
 - [Tails Autostart]
 - [Flatpak]
+- [Running Tails in Proxmox]
 - [Running Tails in virt-manager]
 
 ----
@@ -42,6 +43,7 @@ nav_order: 1
 [Signal]: signal/signal.html
 [Telegram]: telegram/telegram.html
 [Bisq]: bisq/bisq.html
+[Running Tails in Proxmox]: running-in-proxmox/running-in-proxmox.html
 [Running Tails in virt-manager]: running-in-virt-manager/running-in-virt-manager.html
 [Electrum]: electrum/electrum.html
 [Sparrow]: sparrow/sparrow.html
