@@ -24,6 +24,7 @@ nav_order: 1
 - [Telegram]
 - [Bisq]
 - [Electrum]
+- [BitBoxApp]
 - [Sparrow]
 - [VeraCrypt]
 - [Tails Autostart]
@@ -46,5 +47,6 @@ nav_order: 1
 [Running Tails in Proxmox]: running-in-proxmox/running-in-proxmox.html
 [Running Tails in virt-manager]: running-in-virt-manager/running-in-virt-manager.html
 [Electrum]: electrum/electrum.html
+[BitBoxApp]: bitbox/bitbox.html
 [Sparrow]: sparrow/sparrow.html
 [VeraCrypt]: veracrypt/veracrypt.html
