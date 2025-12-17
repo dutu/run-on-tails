@@ -32,8 +32,7 @@ nav_order: 1
 - [Running Tails in Proxmox]
 - [Running Tails in virt-manager]
 
-{: .highlight }
-These instructions document configurations that were last tested on specific Tails and application versions.<br> Newer versions are often compatible, but are not guaranteed to work without adjustment.
+> These instructions document configurations that were last tested on specific Tails and application versions.<br> Newer versions are often compatible, but are not guaranteed to work without adjustment.
 
 ----
 [Tails]: https://tails.net
