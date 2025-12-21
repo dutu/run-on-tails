@@ -14,8 +14,11 @@ Run-on-Tails is a collection of guides that helps you add and run various applic
 - Telegram
 - Bisq
 - Electrum
+- BitBoxApp
+- Sparrow
 - Tails Autostart
 - Flatpak
+- Running Tails in Proxmox
 - Running Tails in virt-manager
 
 ---
