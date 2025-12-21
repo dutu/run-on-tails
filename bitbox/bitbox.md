@@ -24,7 +24,7 @@ nav_order: 70
 The BitBox02 hardware wallet can also be used with several common software wallets (eg. Sparrow, Electrum, ...). The BitBoxApp is released as open source software by the vendor of the hardware wallet.
 
 
-![bitbox.png](bitbox.png)
+![bitbox.png](bitbox.png.bak)
 
 ---
 ### Install the latest version of the BitBoxApp
@@ -73,6 +73,9 @@ If you want to remove a currently installed version of the BitBoxApp (eg. in cas
 {: .important }
 The BitBoxApp conf directory which contains wallet and configuration files is not deleted.
 It is located at `/home/amnesia/bitbox/conf`
+
+---
+> Last tested: BitBoxApp 4.49.0 on Tails 7.3.1
 
 ---
 [BitBoxApp]: https://bitbox.swiss/app/

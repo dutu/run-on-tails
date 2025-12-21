@@ -73,4 +73,7 @@ Sparrow data directory which contains wallet and configuration files is not dele
 It is located at `/live/persistence/TailsData_unlocked/dotfiles/.sparrow/`
 
 ---
+> Last tested: Sparrow 2.3.1 on Tails 7.3.1
+
+---
 [Sparrow]: https://www.sparrowwallet.com/

@@ -229,8 +229,7 @@ Example printout:
 Persistence now survives reboots inside Proxmox.
 
 ---
-{: .highlight }
-Last tested: Tails 7.3.1 in Proxmox 9.1.2.
+> Last tested: Tails 7.3.1 in Proxmox 9.1.2
 
 ---
 [Proxmox Virtual Environment]: https://www.proxmox.com/en/products/proxmox-virtual-environment/overview

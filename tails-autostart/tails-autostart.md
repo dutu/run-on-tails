@@ -58,5 +58,8 @@ This utility facilitates other applications to work properly.
   ```
   > Scripts in `autostart/amnesia.d` and `autostart/root.d` intended to run on startup will remain in place. However, with the removal of Tails autostart, they will no longer be triggered at Tails startup.  
 
+---
+> Last tested on Tails 7.3.1
 
+---
 [Tails Autostart]: https://github.com/dutu/tails-autostart

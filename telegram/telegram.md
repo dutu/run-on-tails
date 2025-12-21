@@ -109,6 +109,9 @@ Telegram application requires Flatpak package. Flatpak is installed as [addition
   $ rm -fr $persistence_dir/org.telegram.desktop
   ```
 
+---
+> Last tested: Telegram Desktop 6.3.9 on Tails 7.3.1
+
 --- 
 [Telegram]: https://telegram.org/
 [Flatpak]: ../flatpak/flatpak.html

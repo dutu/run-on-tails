@@ -95,8 +95,7 @@ Flatpak is now installed and flatpak applications can be added with `flatpak ins
   ```
 
 ---
-{: .highlight }
-Last tested on Tails 7.3.1.
+> Last tested on Tails 7.3.1
 
 ---
 [Flatpak]: https://www.flatpak.org/

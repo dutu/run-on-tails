@@ -100,7 +100,10 @@ Signal application requires Flatpak package. Flatpak is installed as [additional
   $ persistence_dir="/home/amnesia/Persistent"
   $ rm -fr $persistence_dir/org.signal.Signal
   ```
-  
+
+---
+> Last tested: Signal Desktop 7.82.0 on Tails 7.3.1
+
 --- 
 [Signal]: https://signal.org/
 [Flatpak]: ../flatpak/flatpak.html

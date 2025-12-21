@@ -86,9 +86,13 @@ Your [Bisq Data directory] located at `/home/amnesia/Persistent/bisq/Bisq` is no
 This directory contains important files, including your BTC and BSQ wallet files.  
 You should copy your [Bisq Data directory] to a backup location before deleting it manually. 
 
+---
 ### References
 
 * [Running Bisq on Tails]
+
+---
+> Last tested: Bisq v1.9.21 on Tails 7.3.1
 
 ---
 [Bisq]: https://bisq.network/

@@ -119,6 +119,9 @@ $ sudo nano ~/.electrum/config
 Electrum wallet directory located at `/home/amnesia/.electrum/wallets` is not deleted.
 
 ---
+> Last tested: Electrum 4.6.2 on Tails 7.3.1
+
+---
 [Electrum]: https://electrum.org/
 [Configure the Persistent Storage]: https://tails.net/doc/persistent_storage/configure/index.en.html
 [Electrum Bitcoin Wallet feature]: https://tails.net/doc/persistent_storage/configure/index.en.html#electrum
